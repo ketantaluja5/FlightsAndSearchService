@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Welcome to flight service
 
 ## Project Setup
@@ -27,7 +26,6 @@
 "dialect": "mysql"
 }
 }
-<<<<<<< HEAD
 
 ```
 
