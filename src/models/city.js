@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false, // here the constraint is only on javascript level, not on database level but then also it will not allow to insert null value in database,but we can insert null values if we directly insert in database
+        unique: true,
       },
     },
     {

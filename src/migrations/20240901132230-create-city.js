@@ -10,8 +10,9 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       name: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING, //here the constraint is on database level, so it will not allow to insert null value in database and if we insert null value at javascript level it will throw error
         allowNull: false,
+        unique: true,
       },
       createdAt: {
         allowNull: false,
