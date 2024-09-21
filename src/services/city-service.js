@@ -2,7 +2,7 @@ const { CityRepository } = require("../repository/index");
 
 class CityService {
   constructor() {
-    this.CityRepository = CityRepository;
+    this.CityRepository = new CityRepository();
   }
 
   async createCity({ name }) {
@@ -45,3 +45,5 @@ class CityService {
     }
   }
 }
+
+module.exports = CityService;
