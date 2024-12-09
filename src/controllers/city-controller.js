@@ -22,6 +22,27 @@ const create = async (req, res) => {
     });
   }
 };
+
+const createBulk = async (req, res) => {
+  try {
+    const cities = await cityService.createCities(req.body);
+    return res.status(201).json({
+      data: cities,
+      success: true,
+      message: "Cities created successfully",
+      err: {},
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      data: {},
+      success: false,
+      message: "Not able to create cities",
+      err: error,
+    });
+  }
+};
+
 //DELETE request -> /city/:id  data ->req.params
 const destroy = async (req, res) => {
   try {
@@ -106,6 +127,7 @@ const getAll = async (req, res) => {
 
 module.exports = {
   create,
+  createBulk,
   destroy,
   get,
   update,
